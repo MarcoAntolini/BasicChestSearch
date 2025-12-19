@@ -1,0 +1,18 @@
+{
+  "key.category.basicchestsearch.title": "Basic Chest Search",
+  "key.basicchestsearch.toggleBar": "Suchleiste an/aus",
+
+  "text.autoconfig.basicchestsearch.title": "Einstellungen",
+
+  "text.autoconfig.basicchestsearch.option.general.keepSearch": "Suchtext beibehalten",
+  "text.autoconfig.basicchestsearch.option.general.keepSearch.@Tooltip": "Wenn aktiviert, bleibt der Suchtext beim Schließen und erneuten Öffnen eines Containers erhalten.",
+
+  "text.autoconfig.basicchestsearch.option.general.autoFocus": "Suchleiste automatisch fokussieren",
+  "text.autoconfig.basicchestsearch.option.general.autoFocus.@Tooltip": "Fokussiert die Suchleiste automatisch beim Öffnen eines Containers.",
+
+  "text.autoconfig.basicchestsearch.option.general.detachSearchBar": "Suchleiste loslösen",
+  "text.autoconfig.basicchestsearch.option.general.detachSearchBar.@Tooltip": "Entkoppelt die Suchleiste vom Inventar-Fenster.",
+
+  "text.autoconfig.basicchestsearch.option.general.searchMode": "Suchmodus",
+  "text.autoconfig.basicchestsearch.option.general.searchMode.@Tooltip": "Wähle zwischen 'SORT' (versteckt unpassende Items), 'DARKEN' (dimmt unpassende Items) oder 'DISABLED' (keine Suchleiste)."
+}
