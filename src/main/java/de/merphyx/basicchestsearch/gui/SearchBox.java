@@ -1,7 +1,7 @@
-package merphyx.basicchestsearch.gui;
+package de.merphyx.basicchestsearch.gui;
 
-import merphyx.basicchestsearch.BasicChestSearch;
-import merphyx.basicchestsearch.util.TextureUtil;
+import de.merphyx.basicchestsearch.BasicChestSearch;
+import de.merphyx.basicchestsearch.util.TextureUtil;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.widget.TextFieldWidget;

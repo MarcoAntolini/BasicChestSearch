@@ -1,4 +1,4 @@
-package merphyx.basicchestsearch.config;
+package de.merphyx.basicchestsearch.config;
 
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;

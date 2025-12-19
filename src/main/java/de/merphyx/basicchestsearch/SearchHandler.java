@@ -1,9 +1,9 @@
-package merphyx.basicchestsearch;
+package de.merphyx.basicchestsearch;
 
-import merphyx.basicchestsearch.config.Config;
-import merphyx.basicchestsearch.config.Mode;
-import merphyx.basicchestsearch.search.ContainerSearcher;
-import merphyx.basicchestsearch.util.ContainerUtil;
+import de.merphyx.basicchestsearch.config.Config;
+import de.merphyx.basicchestsearch.config.Mode;
+import de.merphyx.basicchestsearch.search.ContainerSearcher;
+import de.merphyx.basicchestsearch.util.ContainerUtil;
 import java.util.ArrayList;
 import java.util.List;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;

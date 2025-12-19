@@ -1,7 +1,7 @@
-package merphyx.basicchestsearch;
+package de.merphyx.basicchestsearch;
 
-import merphyx.basicchestsearch.config.Config;
-import merphyx.basicchestsearch.input.Keybindings;
+import de.merphyx.basicchestsearch.config.Config;
+import de.merphyx.basicchestsearch.input.Keybindings;
 import com.mojang.logging.LogUtils;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;

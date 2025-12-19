@@ -1,4 +1,4 @@
-package merphyx.basicchestsearch.config;
+package de.merphyx.basicchestsearch.config;
 
 public enum Mode {
    DISABLED,

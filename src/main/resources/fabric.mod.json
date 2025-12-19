@@ -16,10 +16,10 @@
 	"environment": "client",
 	"entrypoints": {
 		"client": [
-			"merphyx.basicchestsearch.BasicChestSearch"
+          "de.merphyx.basicchestsearch.BasicChestSearch"
 		],
 		"modmenu": [
-			"merphyx.basicchestsearch.config.ModMenuIntegration"
+          "de.merphyx.basicchestsearch.config.ModMenuIntegration"
 		]
 	},
 	"mixins": [

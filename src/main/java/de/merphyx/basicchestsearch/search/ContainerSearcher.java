@@ -1,4 +1,4 @@
-package merphyx.basicchestsearch.search;
+package de.merphyx.basicchestsearch.search;
 
 import java.util.ArrayList;
 import java.util.List;

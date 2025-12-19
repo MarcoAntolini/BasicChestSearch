@@ -1,4 +1,4 @@
-package merphyx.basicchestsearch.util;
+package de.merphyx.basicchestsearch.util;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.player.PlayerInventory;

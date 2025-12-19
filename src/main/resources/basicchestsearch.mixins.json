@@ -5,7 +5,7 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "client": [
-    "HandledScreenMixin"
+    "de.merphyx.basicchestsearch.mixin.HandledScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1

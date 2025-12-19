@@ -1,4 +1,4 @@
-package merphyx.basicchestsearch.input;
+package de.merphyx.basicchestsearch.input;
 
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;

@@ -1,4 +1,4 @@
-package merphyx.basicchestsearch.config;
+package de.merphyx.basicchestsearch.config;
 
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;

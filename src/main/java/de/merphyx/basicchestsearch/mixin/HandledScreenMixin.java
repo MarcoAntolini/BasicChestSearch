@@ -1,11 +1,11 @@
-package merphyx.basicchestsearch.mixin;
+package de.merphyx.basicchestsearch.mixin;
 
-import merphyx.basicchestsearch.SearchHandler;
-import merphyx.basicchestsearch.config.Config;
-import merphyx.basicchestsearch.config.Mode;
-import merphyx.basicchestsearch.gui.SearchBox;
-import merphyx.basicchestsearch.input.Keybindings;
-import merphyx.basicchestsearch.util.ContainerUtil;
+import de.merphyx.basicchestsearch.SearchHandler;
+import de.merphyx.basicchestsearch.config.Config;
+import de.merphyx.basicchestsearch.config.Mode;
+import de.merphyx.basicchestsearch.gui.SearchBox;
+import de.merphyx.basicchestsearch.input.Keybindings;
+import de.merphyx.basicchestsearch.util.ContainerUtil;
 import net.minecraft.client.gui.Click;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
