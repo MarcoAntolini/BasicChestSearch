@@ -1,0 +1,18 @@
+{
+  "key.category.basicchestsearch.title": "Basic Chest Search",
+  "key.basicchestsearch.toggleBar": "Searchbar on/off",
+
+  "text.autoconfig.basicchestsearch.title": "Settings",
+
+  "text.autoconfig.basicchestsearch.option.general.keepSearch": "Keep search text",
+  "text.autoconfig.basicchestsearch.option.general.keepSearch.@Tooltip": "If enabled, the search text is preserved when closing and reopening a container.",
+
+  "text.autoconfig.basicchestsearch.option.general.autoFocus": "Autofocus search bar",
+  "text.autoconfig.basicchestsearch.option.general.autoFocus.@Tooltip": "Automatically focuses the search bar when opening a container.",
+
+  "text.autoconfig.basicchestsearch.option.general.detachSearchBar": "Detach search bar",
+  "text.autoconfig.basicchestsearch.option.general.detachSearchBar.@Tooltip": "Detaches the search bar from the inventory window.",
+
+  "text.autoconfig.basicchestsearch.option.general.searchMode": "Search mode",
+  "text.autoconfig.basicchestsearch.option.general.searchMode.@Tooltip": "Choose between 'SORT' (hides non-matching items), 'DARKEN' (dims non-matching items), or 'DISABLED' (no search bar)."
+}

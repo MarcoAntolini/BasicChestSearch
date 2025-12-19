@@ -1,4 +1,4 @@
-package cgcm.chestsearchbar.util;
+package merphyx.basicchestsearch.util;
 
 import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.DrawContext;

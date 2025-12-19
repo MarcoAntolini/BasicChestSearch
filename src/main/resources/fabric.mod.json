@@ -1,26 +1,29 @@
 {
 	"schemaVersion": 1,
-	"id": "chestsearchbar",
-	"version": "1.6.1",
-	"name": "Chest Search Bar",
+	"id": "basicchestsearch",
+	"version": "${version}",
+	"name": "Basic Chest Search",
 	"description": "Adds a search bar to containers.",
 	"authors": [
 		"CGCM",
 		"Merphyx"
 	],
 	"contact": {
-		"homepage": "https://www.curseforge.com/minecraft/mc-mods/chest-search-bar"
+		"sources": "https://github.com/Merphyx"
 	},
 	"license": "MIT",
-	"icon": "assets/chestsearchbar/logo.png",
+	"icon": "assets/basicchestsearch/logo.png",
 	"environment": "client",
 	"entrypoints": {
 		"client": [
-			"cgcm.chestsearchbar.ChestSearchBar"
+			"merphyx.basicchestsearch.BasicChestSearch"
+		],
+		"modmenu": [
+			"merphyx.basicchestsearch.config.ModMenuIntegration"
 		]
 	},
 	"mixins": [
-		"chestsearchbar.mixins.json"
+		"basicchestsearch.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.17.2",

@@ -1,7 +1,7 @@
-package cgcm.chestsearchbar.gui;
+package merphyx.basicchestsearch.gui;
 
-import cgcm.chestsearchbar.ChestSearchBar;
-import cgcm.chestsearchbar.util.TextureUtil;
+import merphyx.basicchestsearch.BasicChestSearch;
+import merphyx.basicchestsearch.util.TextureUtil;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.widget.TextFieldWidget;
@@ -21,7 +21,7 @@ public class SearchBox extends TextFieldWidget {
    @Override
    public void renderWidget(DrawContext context, int mouseX, int mouseY, float delta) {
       if (this.isVisible() && this.useTexture) {
-         TextureUtil.draw3SliceTexture(context, ChestSearchBar.BAR_LOCATION, this.getX() - 2, this.getY() - 2, this.getWidth() + 1, 0, 0, 90, 12);
+         TextureUtil.draw3SliceTexture(context, BasicChestSearch.BAR_LOCATION, this.getX() - 2, this.getY() - 2, this.getWidth() + 1, 0, 0, 90, 12);
       }
 
       super.renderWidget(context, mouseX, mouseY, delta);
