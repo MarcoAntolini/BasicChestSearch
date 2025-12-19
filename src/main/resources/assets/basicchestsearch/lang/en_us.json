@@ -1,6 +1,6 @@
 {
   "title.basicchestsearch.cloth_missing": "Info",
-  "message.basicchestsearch.cloth_missing": "Please install 'Cloth Config' to access the settings for this mod.",
+  "message.basicchestsearch.cloth_missing": "Please install 'Cloth Config' to change the settings for this mod.",
 
   "key.category.basicchestsearch.title": "Basic Chest Search",
   "key.basicchestsearch.toggleBar": "Toggle Search bar",

@@ -1,6 +1,6 @@
 {
   "title.basicchestsearch.cloth_missing": "Info",
-  "message.basicchestsearch.cloth_missing": "Bitte installiere 'Cloth Config', um die Einstellungen dieser Mod zu bearbeiten.",
+  "message.basicchestsearch.cloth_missing": "Bitte installiere 'Cloth Config', um die Einstellungen dieser Mod zu ändern.",
 
   "key.category.basicchestsearch.title": "Basic Chest Search",
   "key.basicchestsearch.toggleBar": "Suchleiste an/aus",
@@ -14,7 +14,7 @@
   "option.basicchestsearch.keepSearch": "Suchtext beibehalten",
   "option.basicchestsearch.keepSearch.tooltip": "Wenn aktiviert, bleibt der Suchtext beim Schließen und erneuten Öffnen eines Containers erhalten.",
 
-  "option.basicchestsearch.autoFocus": "Suchleiste automatisch fokussieren",
+  "option.basicchestsearch.autoFocus": "Suchleiste fokussieren",
   "option.basicchestsearch.autoFocus.tooltip": "Fokussiert die Suchleiste automatisch beim Öffnen eines Containers.",
 
   "option.basicchestsearch.detachSearchBar": "Suchleiste loslösen",
