@@ -1,18 +1,22 @@
 {
+  "title.basicchestsearch.cloth_missing": "Info",
+  "message.basicchestsearch.cloth_missing": "Please install 'Cloth Config' to access the settings for this mod.",
+
   "key.category.basicchestsearch.title": "Basic Chest Search",
-  "key.basicchestsearch.toggleBar": "Searchbar on/off",
+  "key.basicchestsearch.toggleBar": "Toggle Search bar",
 
-  "text.autoconfig.basicchestsearch.title": "Settings",
+  "title.basicchestsearch.config": "Basic Chest Search Settings",
+  "category.basicchestsearch.general": "Settings",
 
-  "text.autoconfig.basicchestsearch.option.general.keepSearch": "Keep search text",
-  "text.autoconfig.basicchestsearch.option.general.keepSearch.@Tooltip": "If enabled, the search text is preserved when closing and reopening a container.",
+  "option.basicchestsearch.searchMode": "Search Mode",
+  "option.basicchestsearch.searchMode.tooltip": "SORT: Hides non-matching items\nDARKEN: Dims non-matching items\nDISABLED: Disables the search",
 
-  "text.autoconfig.basicchestsearch.option.general.autoFocus": "Autofocus search bar",
-  "text.autoconfig.basicchestsearch.option.general.autoFocus.@Tooltip": "Automatically focuses the search bar when opening a container.",
+  "option.basicchestsearch.keepSearch": "Keep search text",
+  "option.basicchestsearch.keepSearch.tooltip": "If enabled, the search text is preserved when closing and reopening a container.",
 
-  "text.autoconfig.basicchestsearch.option.general.detachSearchBar": "Detach search bar",
-  "text.autoconfig.basicchestsearch.option.general.detachSearchBar.@Tooltip": "Detaches the search bar from the inventory window.",
+  "option.basicchestsearch.autoFocus": "Autofocus search bar",
+  "option.basicchestsearch.autoFocus.tooltip": "Automatically focuses the search bar when opening a container.",
 
-  "text.autoconfig.basicchestsearch.option.general.searchMode": "Search mode",
-  "text.autoconfig.basicchestsearch.option.general.searchMode.@Tooltip": "Choose between 'SORT' (hides non-matching items), 'DARKEN' (dims non-matching items), or 'DISABLED' (no search bar)."
+  "option.basicchestsearch.detachSearchBar": "Detach search bar",
+  "option.basicchestsearch.detachSearchBar.tooltip": "Detaches the search bar from the inventory window."
 }

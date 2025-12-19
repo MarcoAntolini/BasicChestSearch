@@ -4,11 +4,12 @@ import de.merphyx.basicchestsearch.config.Config;
 import de.merphyx.basicchestsearch.config.Mode;
 import de.merphyx.basicchestsearch.search.ContainerSearcher;
 import de.merphyx.basicchestsearch.util.ContainerUtil;
-import java.util.ArrayList;
-import java.util.List;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.screen.slot.Slot;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SearchHandler {
    public static String search = "";

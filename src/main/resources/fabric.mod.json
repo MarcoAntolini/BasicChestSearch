@@ -5,8 +5,10 @@
 	"name": "Basic Chest Search",
 	"description": "Adds a search bar to containers.",
 	"authors": [
-		"CGCM",
 		"Merphyx"
+	],
+	"contributors": [
+		"CGCM"
 	],
 	"contact": {
 		"sources": "https://github.com/Merphyx/BasicChestSearch"
@@ -16,22 +18,23 @@
 	"environment": "client",
 	"entrypoints": {
 		"client": [
-          "de.merphyx.basicchestsearch.BasicChestSearch"
+			"de.merphyx.basicchestsearch.BasicChestSearch"
 		],
 		"modmenu": [
-          "de.merphyx.basicchestsearch.config.ModMenuIntegration"
+			"de.merphyx.basicchestsearch.config.ModMenuApiImpl"
 		]
 	},
 	"mixins": [
 		"basicchestsearch.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.17.2",
+		"fabricloader": ">=0.17.0",
 		"minecraft": ">=1.21.9",
 		"java": ">=21",
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"another-mod": "*"
+		"cloth-config2": "*",
+		"modmenu": "*"
 	}
 }

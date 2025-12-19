@@ -1,18 +1,22 @@
 {
+  "title.basicchestsearch.cloth_missing": "Info",
+  "message.basicchestsearch.cloth_missing": "Bitte installiere 'Cloth Config', um die Einstellungen dieser Mod zu bearbeiten.",
+
   "key.category.basicchestsearch.title": "Basic Chest Search",
   "key.basicchestsearch.toggleBar": "Suchleiste an/aus",
 
-  "text.autoconfig.basicchestsearch.title": "Einstellungen",
+  "title.basicchestsearch.config": "Basic Chest Search Einstellungen",
+  "category.basicchestsearch.general": "Einstellungen",
 
-  "text.autoconfig.basicchestsearch.option.general.keepSearch": "Suchtext beibehalten",
-  "text.autoconfig.basicchestsearch.option.general.keepSearch.@Tooltip": "Wenn aktiviert, bleibt der Suchtext beim Schließen und erneuten Öffnen eines Containers erhalten.",
+  "option.basicchestsearch.searchMode": "Suchmodus",
+  "option.basicchestsearch.searchMode.tooltip": "SORT: Versteckt unpassende Items\nDARKEN: Dimmt unpassende Items\nDISABLED: Deaktiviert die Suche.",
 
-  "text.autoconfig.basicchestsearch.option.general.autoFocus": "Suchleiste automatisch fokussieren",
-  "text.autoconfig.basicchestsearch.option.general.autoFocus.@Tooltip": "Fokussiert die Suchleiste automatisch beim Öffnen eines Containers.",
+  "option.basicchestsearch.keepSearch": "Suchtext beibehalten",
+  "option.basicchestsearch.keepSearch.tooltip": "Wenn aktiviert, bleibt der Suchtext beim Schließen und erneuten Öffnen eines Containers erhalten.",
 
-  "text.autoconfig.basicchestsearch.option.general.detachSearchBar": "Suchleiste loslösen",
-  "text.autoconfig.basicchestsearch.option.general.detachSearchBar.@Tooltip": "Entkoppelt die Suchleiste vom Inventar-Fenster.",
+  "option.basicchestsearch.autoFocus": "Suchleiste automatisch fokussieren",
+  "option.basicchestsearch.autoFocus.tooltip": "Fokussiert die Suchleiste automatisch beim Öffnen eines Containers.",
 
-  "text.autoconfig.basicchestsearch.option.general.searchMode": "Suchmodus",
-  "text.autoconfig.basicchestsearch.option.general.searchMode.@Tooltip": "Wähle zwischen 'SORT' (versteckt unpassende Items), 'DARKEN' (dimmt unpassende Items) oder 'DISABLED' (keine Suchleiste)."
+  "option.basicchestsearch.detachSearchBar": "Suchleiste loslösen",
+  "option.basicchestsearch.detachSearchBar.tooltip": "Entkoppelt die Suchleiste vom Inventar-Fenster."
 }

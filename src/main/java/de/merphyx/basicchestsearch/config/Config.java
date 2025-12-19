@@ -1,18 +1,41 @@
 package de.merphyx.basicchestsearch.config;
 
-import me.shedaniel.autoconfig.AutoConfig;
-import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.gui.screen.ingame.*;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class Config {
-    private static ModConfig configHolder;
+    private static final Path CONFIG_FILE = FabricLoader.getInstance().getConfigDir().resolve("basicchestsearch.json");
+    private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+
+    private static DefaultConfig handler = new DefaultConfig();
 
     public static void init() {
-        AutoConfig.register(ModConfig.class, GsonConfigSerializer::new);
-        configHolder = AutoConfig.getConfigHolder(ModConfig.class).getConfig();
+        load();
+    }
+
+    public static void load() {
+        try {
+            if (Files.exists(CONFIG_FILE)) {
+                handler = GSON.fromJson(Files.newBufferedReader(CONFIG_FILE), DefaultConfig.class);
+            }
+        } catch (Exception e) {
+            handler = new DefaultConfig();
+        }
+    }
+
+    public static void save() {
+        try {
+            Files.writeString(CONFIG_FILE, GSON.toJson(handler));
+        } catch (Exception ignored) {}
     }
 
     public static Mode getSearchMode(HandledScreen<?> screen, int menuSize) {
+
         if (screen instanceof CreativeInventoryScreen ||
                 screen instanceof InventoryScreen ||
                 screen instanceof CraftingScreen) {
@@ -23,13 +46,16 @@ public class Config {
 
         if (className.equals("net.minecraft.client.gui.screen.ingame.GenericContainerScreen") ||
                 (className.startsWith("net.minecraft.") && menuSize >= 27)) {
-            return configHolder.general.searchMode;
+            return handler.searchMode;
         }
 
         return Mode.DISABLED;
     }
 
-    public static boolean keepSearch() { return configHolder.general.keepSearch; }
-    public static boolean autoFocus() { return configHolder.general.autoFocus; }
-    public static boolean detachSearchBar() { return configHolder.general.detachSearchBar; }
+    public static boolean keepSearch() { return handler.keepSearch; }
+    public static boolean autoFocus() { return handler.autoFocus; }
+    public static boolean detachSearchBar() { return handler.detachSearchBar; }
+
+    public static DefaultConfig getRawConfig() { return handler; }
+
 }

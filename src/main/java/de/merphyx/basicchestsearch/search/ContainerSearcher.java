@@ -1,8 +1,5 @@
 package de.merphyx.basicchestsearch.search;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
 import net.minecraft.component.DataComponentTypes;
 import net.minecraft.component.type.BundleContentsComponent;
 import net.minecraft.component.type.ContainerComponent;
@@ -13,6 +10,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.slot.Slot;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 
 public class ContainerSearcher {
 
