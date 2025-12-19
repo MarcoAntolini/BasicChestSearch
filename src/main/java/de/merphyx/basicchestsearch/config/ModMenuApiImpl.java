@@ -9,6 +9,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 
 public class ModMenuApiImpl implements ModMenuApi {
+
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
         return parent -> {
@@ -23,4 +24,5 @@ public class ModMenuApiImpl implements ModMenuApi {
             }
         };
     }
+
 }

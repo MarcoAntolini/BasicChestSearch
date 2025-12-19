@@ -9,6 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class Config {
+
     private static final Path CONFIG_FILE = FabricLoader.getInstance().getConfigDir().resolve("basicchestsearch.json");
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
 

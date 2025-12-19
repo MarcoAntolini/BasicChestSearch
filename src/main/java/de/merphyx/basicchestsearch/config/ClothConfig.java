@@ -7,6 +7,7 @@ import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.text.Text;
 
 public class ClothConfig {
+
     public static Screen create(Screen parent) {
 
         DefaultConfig config = Config.getRawConfig();
@@ -50,4 +51,5 @@ public class ClothConfig {
 
         return builder.build();
     }
+
 }
