@@ -1,11 +1,11 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "merphyx.basicchestsearch.mixin",
+  "package": "de.merphyx.basicchestsearch.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [],
   "client": [
-    "de.merphyx.basicchestsearch.mixin.HandledScreenMixin"
+    "HandledScreenMixin"
   ],
   "injectors": {
     "defaultRequire": 1
