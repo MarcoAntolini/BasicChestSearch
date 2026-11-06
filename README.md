@@ -30,8 +30,9 @@ Customize the mod's behavior through the settings menu (requires **Cloth Config*
 
 ## 📦 Requirements
 
-* **Fabric Loader:** Without Mod menu (>= 0.17.0) / With Mod menu (>= 0.17.2)
-* **Minecraft:** 1.21.9 / 1.21.10
+* **Fabric Loader:** >= 0.20.1
+* **Java:** 25
+* **Minecraft:** 26.3
 * **Dependencies:** [Fabric API](https://modrinth.com/mod/fabric-api)
 * **Optional:** [Cloth Config](https://modrinth.com/mod/cloth-config) & [ModMenu](https://modrinth.com/mod/modmenu) (for settings)
 

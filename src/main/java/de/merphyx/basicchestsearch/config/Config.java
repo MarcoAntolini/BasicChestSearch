@@ -1,7 +1,10 @@
 package de.merphyx.basicchestsearch.config;
 
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.client.gui.screen.ingame.*;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.screens.inventory.CraftingScreen;
+import net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen;
+import net.minecraft.client.gui.screens.inventory.InventoryScreen;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -35,9 +38,9 @@ public class Config {
         } catch (Exception ignored) {}
     }
 
-    public static Mode getSearchMode(HandledScreen<?> screen, int menuSize) {
+    public static Mode getSearchMode(AbstractContainerScreen<?> screen, int menuSize) {
 
-        if (screen instanceof CreativeInventoryScreen ||
+        if (screen instanceof CreativeModeInventoryScreen ||
                 screen instanceof InventoryScreen ||
                 screen instanceof CraftingScreen) {
             return Mode.DISABLED;
@@ -45,7 +48,7 @@ public class Config {
 
         String className = screen.getClass().getName();
 
-        if (className.equals("net.minecraft.client.gui.screen.ingame.GenericContainerScreen") ||
+        if (className.equals("net.minecraft.client.gui.screens.inventory.ContainerScreen") ||
                 (className.startsWith("net.minecraft.") && menuSize >= 27)) {
             return handler.searchMode;
         }

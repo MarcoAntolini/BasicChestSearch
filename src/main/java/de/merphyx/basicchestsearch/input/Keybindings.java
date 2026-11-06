@@ -1,22 +1,21 @@
 package de.merphyx.basicchestsearch.input;
 
-import net.minecraft.client.option.KeyBinding;
-import net.minecraft.client.util.InputUtil;
-import net.minecraft.util.Identifier;
-import org.lwjgl.glfw.GLFW;
+import com.mojang.blaze3d.platform.InputConstants;
+import net.minecraft.client.KeyMapping;
+import net.minecraft.resources.Identifier;
 
 public class Keybindings {
 
-   public static KeyBinding.Category KEY_CATEGORY =
-           KeyBinding.Category.create(
-                   Identifier.of("basicchestsearch", "title")
+   public static KeyMapping.Category KEY_CATEGORY =
+           KeyMapping.Category.register(
+                   Identifier.fromNamespaceAndPath("basicchestsearch", "title")
            );
 
-   public static KeyBinding TOGGLE_SEARCH_BAR_KEY =
-           new KeyBinding(
+   public static KeyMapping TOGGLE_SEARCH_BAR_KEY =
+           new KeyMapping(
                    "key.basicchestsearch.toggleBar",
-                   InputUtil.Type.KEYSYM,
-                   GLFW.GLFW_KEY_T,
+                   InputConstants.Type.KEYBOARD,
+                   InputConstants.KEY_T,
                    KEY_CATEGORY
            );
 
