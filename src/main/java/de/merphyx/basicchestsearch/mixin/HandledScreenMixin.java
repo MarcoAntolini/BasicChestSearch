@@ -33,10 +33,12 @@ import java.util.List;
 public abstract class HandledScreenMixin<T extends AbstractContainerMenu> extends Screen {
 
    @Shadow protected int imageWidth;
-   @Shadow protected int titleLabelX;
    @Shadow protected int titleLabelY;
+   @Shadow protected int inventoryLabelX;
+   @Shadow protected int inventoryLabelY;
    @Shadow protected int leftPos;
    @Shadow protected int topPos;
+   @Shadow protected Component playerInventoryTitle;
    @Shadow @Nullable protected Slot hoveredSlot;
 
    @Shadow @Nullable private Slot getHoveredSlot(double x, double y) { return null; }
@@ -68,15 +70,13 @@ public abstract class HandledScreenMixin<T extends AbstractContainerMenu> extend
       int barWidth;
 
       if (Config.detachSearchBar()) {
-         barWidth = (int) (this.imageWidth * 0.6D);
-         pX = this.width / 2 - barWidth / 2;
+         barWidth = this.imageWidth;
+         pX = this.leftPos - 1;
          pY = Math.max(pY - 20, 1);
       } else {
-         String titleStr = this.title.getString().replaceAll("\\p{C}", "");
-         pX = this.titleLabelX + this.leftPos + (titleStr.isBlank() ? 0 : this.font.width(titleStr) + 3);
-         int maxX = this.leftPos + this.imageWidth - this.titleLabelX - 32;
-         pX = Math.min(pX, maxX);
-         barWidth = (this.leftPos + this.imageWidth - this.titleLabelX) - pX + 1;
+         // The bar texture is drawn 2px left of the widget and 1px wider than it.
+         barWidth = this.imageWidth - 1;
+         pX = this.leftPos + 1;
       }
 
       EditBox searchBar = new SearchBox(this.font, pX + 1, pY, barWidth, 12, Config.detachSearchBar());
@@ -90,6 +90,16 @@ public abstract class HandledScreenMixin<T extends AbstractContainerMenu> extend
    )
    private Slot universalSlotRedirect(AbstractContainerScreen<?> instance, double x, double y) {
       return this.findSlot(x, y);
+   }
+
+   @Inject(method = "extractLabels", at = @At("HEAD"), cancellable = true)
+   private void hideContainerTitle(GuiGraphicsExtractor graphics, int mouseX, int mouseY, CallbackInfo ci) {
+      if (Config.detachSearchBar() || this.searchHandler == null || !this.searchHandler.getSearchBar().isVisible()) {
+         return;
+      }
+
+      graphics.text(this.font, this.playerInventoryTitle, this.inventoryLabelX, this.inventoryLabelY, 0xFF404040, false);
+      ci.cancel();
    }
 
    @Inject(method = {"extractSlotHighlightBack", "extractSlotHighlightFront"}, at = @At("HEAD"), cancellable = true)
