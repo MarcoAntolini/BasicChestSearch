@@ -4,6 +4,7 @@
 
   "key.category.basicchestsearch.title": "Basic Chest Search",
   "key.basicchestsearch.toggleBar": "Toggle Search bar",
+  "gui.basicchestsearch.placeholder": "Search items...",
 
   "title.basicchestsearch.config": "Basic Chest Search Settings",
   "category.basicchestsearch.general": "Settings",

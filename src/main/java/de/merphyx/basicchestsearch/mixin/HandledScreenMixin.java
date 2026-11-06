@@ -1,6 +1,5 @@
 package de.merphyx.basicchestsearch.mixin;
 
-import com.mojang.blaze3d.platform.InputConstants;
 import de.merphyx.basicchestsearch.SearchHandler;
 import de.merphyx.basicchestsearch.config.Config;
 import de.merphyx.basicchestsearch.config.Mode;
@@ -182,8 +181,11 @@ public abstract class HandledScreenMixin<T extends AbstractContainerMenu> extend
 
       EditBox bar = this.searchHandler.getSearchBar();
       if (bar.isFocused()) {
-         if (event.keycode() == InputConstants.KEY_ESCAPE) {
+         if (event.isEscape()) {
             bar.setFocused(false);
+            if (this.getFocused() == bar) {
+               this.setFocused(null);
+            }
          } else if (bar.isVisible()) {
             bar.keyPressed(event);
          }

@@ -4,6 +4,7 @@
 
   "key.category.basicchestsearch.title": "Basic Chest Search",
   "key.basicchestsearch.toggleBar": "Suchleiste an/aus",
+  "gui.basicchestsearch.placeholder": "Gegenstände suchen...",
 
   "title.basicchestsearch.config": "Basic Chest Search Einstellungen",
   "category.basicchestsearch.general": "Einstellungen",
