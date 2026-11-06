@@ -27,6 +27,10 @@ public class Config {
             if (Files.exists(CONFIG_FILE)) {
                 handler = GSON.fromJson(Files.newBufferedReader(CONFIG_FILE), DefaultConfig.class);
             }
+            if (handler == null) {
+                handler = new DefaultConfig();
+            }
+            handler.ensureDefaults();
         } catch (Exception e) {
             handler = new DefaultConfig();
         }
@@ -59,6 +63,8 @@ public class Config {
     public static boolean keepSearch() { return handler.keepSearch; }
     public static boolean autoFocus() { return handler.autoFocus; }
     public static boolean detachSearchBar() { return handler.detachSearchBar; }
+    public static BoundKey focusSearch() { return handler.focusSearch; }
+    public static BoundKey clearSearch() { return handler.clearSearch; }
 
     public static DefaultConfig getRawConfig() { return handler; }
 

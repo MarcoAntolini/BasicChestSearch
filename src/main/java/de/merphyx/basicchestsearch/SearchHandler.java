@@ -14,6 +14,7 @@ import java.util.List;
 public class SearchHandler {
    public static String search = "";
    public static boolean enabled = true;
+   public static boolean swallowNextChar;
 
    private final AbstractContainerScreen<?> screen;
    private final EditBox searchBar;
@@ -39,6 +40,9 @@ public class SearchHandler {
    }
 
    public void tick() {
+      // The key event is polled before this tick, and the matching character event with it.
+      // Anything still set here was a non-character bind and must not eat the next typed letter.
+      swallowNextChar = false;
       if (this.shouldUseSearch()) {
          this.update(this.searchBar.getValue());
       }

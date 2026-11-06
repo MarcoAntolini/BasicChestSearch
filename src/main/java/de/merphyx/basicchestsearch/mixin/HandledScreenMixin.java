@@ -190,6 +190,17 @@ public abstract class HandledScreenMixin<T extends AbstractContainerMenu> extend
       if (this.searchHandler == null) return;
 
       EditBox bar = this.searchHandler.getSearchBar();
+      if (Config.focusSearch().matches(event)) {
+         this.focusSearchBar(bar);
+         cir.setReturnValue(true);
+         return;
+      }
+      if (Config.clearSearch().matches(event)) {
+         bar.setValue("");
+         SearchHandler.swallowNextChar = true;
+         cir.setReturnValue(true);
+         return;
+      }
       if (bar.isFocused()) {
          if (event.isEscape()) {
             bar.setFocused(false);
@@ -216,6 +227,17 @@ public abstract class HandledScreenMixin<T extends AbstractContainerMenu> extend
       if (this.searchHandler != null) {
          this.searchHandler.tick();
       }
+   }
+
+   @Unique
+   private void focusSearchBar(EditBox bar) {
+      if (!bar.isVisible()) {
+         bar.setVisible(true);
+         SearchHandler.enabled = true;
+      }
+      bar.setFocused(true);
+      this.setFocused(bar);
+      SearchHandler.swallowNextChar = true;
    }
 
    @Unique

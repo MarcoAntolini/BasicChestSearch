@@ -15,6 +15,8 @@ public class SearchBox extends EditBox {
            .withStyle(EditBox.SEARCH_HINT_STYLE);
    private static final String CLEAR_GLYPH = "x";
    private static final int CLEAR_GAP = 2;
+   // 8px font centered in 14px leaves 2px inside the 1px border. 12px only leaves 1px.
+   private static final int BAR_HEIGHT = 14;
 
    private final Font font;
    private final boolean useTexture;
@@ -26,12 +28,17 @@ public class SearchBox extends EditBox {
       this.setBordered(bordered);
       this.setTextColor(0xFFFFFFFF);
       this.setHint(PLACEHOLDER);
+      if (bordered) {
+         this.setHeight(BAR_HEIGHT);
+         // Keep the glyphs where they were; the extra pixel of bar grows outward.
+         this.setY(this.getY() - 1);
+      }
    }
 
    @Override
    public void extractWidgetRenderState(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick) {
       if (this.isVisible() && this.useTexture) {
-         TextureUtil.draw3SliceTexture(graphics, BasicChestSearch.BAR_LOCATION, this.getX() - 2, this.getY() - 2, this.getWidth() + 1, 0, 0, 90, 12);
+         TextureUtil.draw3SliceTexture(graphics, BasicChestSearch.BAR_LOCATION, this.getX() - 2, this.getY() - 3, this.getWidth() + 1, 0, 0, 90, BAR_HEIGHT);
       }
 
       super.extractWidgetRenderState(graphics, mouseX, mouseY, partialTick);

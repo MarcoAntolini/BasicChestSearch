@@ -19,5 +19,11 @@
   "option.basicchestsearch.autoFocus.tooltip": "Automatically focuses the search bar when opening a container.",
 
   "option.basicchestsearch.detachSearchBar": "Detach search bar",
-  "option.basicchestsearch.detachSearchBar.tooltip": "Detaches the search bar from the inventory window."
+  "option.basicchestsearch.detachSearchBar.tooltip": "Detaches the search bar from the inventory window.",
+
+  "option.basicchestsearch.focusSearch": "Focus search bar",
+  "option.basicchestsearch.focusSearch.tooltip": "Key or combination, such as Ctrl+F, that focuses the search bar.\nClick the button, then press the keys. Unbound by default.",
+
+  "option.basicchestsearch.clearSearch": "Clear search bar",
+  "option.basicchestsearch.clearSearch.tooltip": "Key or combination that clears the search text.\nClick the button, then press the keys. Unbound by default."
 }

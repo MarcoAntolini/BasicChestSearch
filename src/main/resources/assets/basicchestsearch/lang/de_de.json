@@ -19,5 +19,11 @@
   "option.basicchestsearch.autoFocus.tooltip": "Fokussiert die Suchleiste automatisch beim Öffnen eines Containers.",
 
   "option.basicchestsearch.detachSearchBar": "Suchleiste loslösen",
-  "option.basicchestsearch.detachSearchBar.tooltip": "Entkoppelt die Suchleiste vom Inventar-Fenster."
+  "option.basicchestsearch.detachSearchBar.tooltip": "Entkoppelt die Suchleiste vom Inventar-Fenster.",
+
+  "option.basicchestsearch.focusSearch": "Taste zum Fokussieren",
+  "option.basicchestsearch.focusSearch.tooltip": "Taste oder Kombination, z. B. Strg+F, die die Suchleiste fokussiert.\nAuf die Schaltfläche klicken und die Tasten drücken. Standardmäßig nicht belegt.",
+
+  "option.basicchestsearch.clearSearch": "Taste zum Leeren",
+  "option.basicchestsearch.clearSearch.tooltip": "Taste oder Kombination, die den Suchtext löscht.\nAuf die Schaltfläche klicken und die Tasten drücken. Standardmäßig nicht belegt."
 }
