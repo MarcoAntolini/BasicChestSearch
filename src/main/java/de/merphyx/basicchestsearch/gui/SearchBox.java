@@ -12,12 +12,10 @@ public class SearchBox extends EditBox {
    private static final Component PLACEHOLDER = Component.translatable("gui.basicchestsearch.placeholder")
            .withStyle(EditBox.SEARCH_HINT_STYLE);
 
-   private final Font font;
    private final boolean useTexture;
 
    public SearchBox(Font font, int x, int y, int width, int height, boolean bordered) {
       super(font, x, y, width, height, Component.translatable("itemGroup.search"));
-      this.font = font;
       this.useTexture = !bordered;
       this.setBordered(bordered);
       this.setTextColor(0xFFFFFFFF);
@@ -31,12 +29,6 @@ public class SearchBox extends EditBox {
       }
 
       super.extractWidgetRenderState(graphics, mouseX, mouseY, partialTick);
-
-      if (this.isVisible() && this.getValue().isEmpty() && this.isFocused()) {
-         int textX = this.getX() + (this.isBordered() ? 4 : 0);
-         int textY = this.isBordered() ? this.getY() + (this.getHeight() - 8) / 2 : this.getY();
-         graphics.text(this.font, PLACEHOLDER, textX, textY, 0xFFFFFFFF);
-      }
    }
 
    @Override
