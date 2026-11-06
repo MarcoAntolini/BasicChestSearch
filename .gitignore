@@ -1,0 +1,37 @@
+# Gradle
+.gradle/
+build/
+out/
+classes/
+
+# Fabric Loom
+run/
+remappedSrc/
+
+# Eclipse
+*.launch
+.classpath
+.project
+.settings/
+bin/
+
+# IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+
+# Logs and crash dumps
+*.log
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
