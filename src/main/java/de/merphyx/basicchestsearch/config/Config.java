@@ -65,6 +65,14 @@ public class Config {
     public static boolean detachSearchBar() { return handler.detachSearchBar; }
     public static BoundKey focusSearch() { return handler.focusSearch; }
     public static BoundKey clearSearch() { return handler.clearSearch; }
+    public static int dimColor() { return withOpacity(0x000000, handler.dimOpacity); }
+    public static int highlightColor() { return withOpacity(handler.highlightColor, handler.highlightOpacity); }
+    public static int borderThickness() { return handler.borderThickness; }
+
+    private static int withOpacity(int rgb, int percent) {
+        int alpha = (percent * 255 + 50) / 100;
+        return (alpha << 24) | (rgb & 0x00FFFFFF);
+    }
 
     public static DefaultConfig getRawConfig() { return handler; }
 

@@ -8,6 +8,7 @@
 
   "title.basicchestsearch.config": "Basic Chest Search Settings",
   "category.basicchestsearch.general": "Settings",
+  "category.basicchestsearch.appearance": "Appearance",
 
   "option.basicchestsearch.searchMode": "Search Mode",
   "option.basicchestsearch.searchMode.tooltip": "SORT: Hides non-matching items\nDARKEN: Dims non-matching items\nDISABLED: Disables the search",
@@ -22,8 +23,20 @@
   "option.basicchestsearch.detachSearchBar.tooltip": "Detaches the search bar from the inventory window.",
 
   "option.basicchestsearch.focusSearch": "Focus search bar",
-  "option.basicchestsearch.focusSearch.tooltip": "Key or combination, such as Ctrl+F, that focuses the search bar.\nClick the button, then press the keys. Unbound by default.",
+  "option.basicchestsearch.focusSearch.tooltip": "Key or combination that focuses the search bar.\nClick the button, then press the keys. Default is Ctrl+F.",
 
   "option.basicchestsearch.clearSearch": "Clear search bar",
-  "option.basicchestsearch.clearSearch.tooltip": "Key or combination that clears the search text.\nClick the button, then press the keys. Unbound by default."
+  "option.basicchestsearch.clearSearch.tooltip": "Key or combination that clears the search text.\nClick the button, then press the keys. Default is Ctrl+D.",
+
+  "option.basicchestsearch.dimOpacity": "Dim opacity",
+  "option.basicchestsearch.dimOpacity.tooltip": "How strongly non-matching items are darkened.\nOnly applies in DARKEN mode. 0% leaves them unchanged.",
+
+  "option.basicchestsearch.highlightColor": "Highlight colour",
+  "option.basicchestsearch.highlightColor.tooltip": "Colour of the border drawn around items that match the search.",
+
+  "option.basicchestsearch.highlightOpacity": "Highlight opacity",
+  "option.basicchestsearch.highlightOpacity.tooltip": "Opacity of the border around matching items.\n0% hides the border. Only applies in DARKEN mode.",
+
+  "option.basicchestsearch.borderThickness": "Border thickness",
+  "option.basicchestsearch.borderThickness.tooltip": "Width of the match border, in pixels."
 }

@@ -26,7 +26,10 @@ Customize the mod's behavior through the settings menu (requires **Cloth Config*
 * **Mode:** Switch between `SORT`, `DARKEN`, `DISABLED`. (default SORT)
 * **Keep-Search:** Keep your search text active after closing the container. (default on)
 * **Auto-Focus:** Automatically focuses the search bar when opening a container. (default off)
-* **Detach-bar:** Detaches the search bar from the inventory window. (default off)
+* **Detach-bar:** Detaches the search bar from the inventory window. (default on)
+* **Focus / Clear:** Ctrl+F focuses the search bar, Ctrl+D clears it.
+* **Dim opacity:** How strongly `DARKEN` covers non-matching items. (default 50%)
+* **Highlight:** Border colour, opacity, and thickness around matches in `DARKEN`. (default yellow, 100%, 1px)
 
 ## 📦 Requirements
 

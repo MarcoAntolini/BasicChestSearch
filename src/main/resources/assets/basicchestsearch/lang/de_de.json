@@ -8,6 +8,7 @@
 
   "title.basicchestsearch.config": "Basic Chest Search Einstellungen",
   "category.basicchestsearch.general": "Einstellungen",
+  "category.basicchestsearch.appearance": "Darstellung",
 
   "option.basicchestsearch.searchMode": "Suchmodus",
   "option.basicchestsearch.searchMode.tooltip": "SORT: Versteckt unpassende Items\nDARKEN: Dimmt unpassende Items\nDISABLED: Deaktiviert die Suche.",
@@ -22,8 +23,20 @@
   "option.basicchestsearch.detachSearchBar.tooltip": "Entkoppelt die Suchleiste vom Inventar-Fenster.",
 
   "option.basicchestsearch.focusSearch": "Taste zum Fokussieren",
-  "option.basicchestsearch.focusSearch.tooltip": "Taste oder Kombination, z. B. Strg+F, die die Suchleiste fokussiert.\nAuf die Schaltfläche klicken und die Tasten drücken. Standardmäßig nicht belegt.",
+  "option.basicchestsearch.focusSearch.tooltip": "Taste oder Kombination, die die Suchleiste fokussiert.\nAuf die Schaltfläche klicken und die Tasten drücken. Standard ist Strg+F.",
 
   "option.basicchestsearch.clearSearch": "Taste zum Leeren",
-  "option.basicchestsearch.clearSearch.tooltip": "Taste oder Kombination, die den Suchtext löscht.\nAuf die Schaltfläche klicken und die Tasten drücken. Standardmäßig nicht belegt."
+  "option.basicchestsearch.clearSearch.tooltip": "Taste oder Kombination, die den Suchtext löscht.\nAuf die Schaltfläche klicken und die Tasten drücken. Standard ist Strg+D.",
+
+  "option.basicchestsearch.dimOpacity": "Abdunklung",
+  "option.basicchestsearch.dimOpacity.tooltip": "Wie stark unpassende Gegenstände abgedunkelt werden.\nGilt nur im Modus DARKEN. 0 % lässt sie unverändert.",
+
+  "option.basicchestsearch.highlightColor": "Markierungsfarbe",
+  "option.basicchestsearch.highlightColor.tooltip": "Farbe des Rahmens um Gegenstände, die zur Suche passen.",
+
+  "option.basicchestsearch.highlightOpacity": "Markierungsdeckkraft",
+  "option.basicchestsearch.highlightOpacity.tooltip": "Deckkraft des Rahmens um passende Gegenstände.\n0 % blendet den Rahmen aus. Gilt nur im Modus DARKEN.",
+
+  "option.basicchestsearch.borderThickness": "Rahmenstärke",
+  "option.basicchestsearch.borderThickness.tooltip": "Breite des Markierungsrahmens in Pixeln."
 }

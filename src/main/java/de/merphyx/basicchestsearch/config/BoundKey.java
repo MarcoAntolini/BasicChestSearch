@@ -11,6 +11,13 @@ public class BoundKey {
     public boolean control;
     public boolean shift;
 
+    public static BoundKey ctrl(int keyCode) {
+        BoundKey bound = new BoundKey();
+        bound.key = InputConstants.Type.KEYBOARD.getOrCreate(keyCode).getName();
+        bound.control = true;
+        return bound;
+    }
+
     public boolean matches(KeyEvent event) {
         InputConstants.Key bound = this.resolve();
         if (bound.equals(InputConstants.UNKNOWN) || bound.getType() != InputConstants.Type.KEYBOARD) {

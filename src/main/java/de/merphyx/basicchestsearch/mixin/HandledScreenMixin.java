@@ -27,8 +27,6 @@ import org.spongepowered.asm.mixin.injection.At.Shift;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.List;
-
 @Mixin(AbstractContainerScreen.class)
 public abstract class HandledScreenMixin<T extends AbstractContainerMenu> extends Screen {
 
@@ -39,7 +37,6 @@ public abstract class HandledScreenMixin<T extends AbstractContainerMenu> extend
    @Shadow protected int leftPos;
    @Shadow protected int topPos;
    @Shadow protected Component playerInventoryTitle;
-   @Shadow @Nullable protected Slot hoveredSlot;
 
    @Shadow @Nullable private Slot getHoveredSlot(double x, double y) { return null; }
    @Shadow private boolean isHovering(Slot slot, double xm, double ym) { return false; }
@@ -124,11 +121,8 @@ public abstract class HandledScreenMixin<T extends AbstractContainerMenu> extend
    )
    private void drawSlotHighlightBackground(GuiGraphicsExtractor graphics, Slot slot, int mouseX, int mouseY, CallbackInfo ci) {
       if (this.searchHandler != null && this.searchHandler.shouldUseSearch() && this.searchHandler.isSortMode()) {
-         if (this.hoveredSlot != null) {
-            Slot hoverSlot = this.getHoveredSlot(this.currentMouseX, this.currentMouseY);
-            if (slot.equals(hoverSlot)) {
-               graphics.fill(slot.x, slot.y, slot.x + 16, slot.y + 16, 0x80FFFFFF);
-            }
+         if (this.isHovering(slot, this.currentMouseX, this.currentMouseY) && this.searchHandler.sortedSlot(slot) != null) {
+            graphics.fill(slot.x, slot.y, slot.x + 16, slot.y + 16, 0x80FFFFFF);
          }
       }
    }
@@ -142,14 +136,19 @@ public abstract class HandledScreenMixin<T extends AbstractContainerMenu> extend
            )
    )
    private void onDrawForeground(GuiGraphicsExtractor graphics, int mouseX, int mouseY, float partialTick, CallbackInfo ci) {
-      if (this.searchHandler != null && this.searchHandler.shouldUseSearch()) {
-         if (!this.searchHandler.isSortMode()) {
-            int menuSize = this.searchHandler.getMenuSize();
-            for (int i = 0; i < menuSize; ++i) {
-               Slot posSlot = this.getMenu().getSlot(i);
-               if (!this.searchHandler.isResult(posSlot)) {
-                  graphics.fill(posSlot.x, posSlot.y, posSlot.x + 16, posSlot.y + 16, 0xB4000000);
+      if (this.searchHandler != null && this.searchHandler.shouldUseSearch() && !this.searchHandler.isSortMode()) {
+         int dim = Config.dimColor();
+         int highlight = Config.highlightColor();
+         int thickness = Config.borderThickness();
+         int slotCount = this.getMenu().slots.size();
+         for (int i = 0; i < slotCount; ++i) {
+            Slot posSlot = this.getMenu().getSlot(i);
+            if (this.searchHandler.isResult(posSlot)) {
+               if ((highlight >>> 24) != 0) {
+                  this.drawMatchBorder(graphics, posSlot, thickness, highlight);
                }
+            } else if ((dim >>> 24) != 0) {
+               graphics.fill(posSlot.x, posSlot.y, posSlot.x + 16, posSlot.y + 16, dim);
             }
          }
       }
@@ -157,9 +156,9 @@ public abstract class HandledScreenMixin<T extends AbstractContainerMenu> extend
 
    @Redirect(method = "extractSlot", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/inventory/Slot;getItem()Lnet/minecraft/world/item/ItemStack;"))
    private ItemStack redirectedStack(Slot slot) {
-      if (this.isSearchAndSortActive() && slot.index < this.searchHandler.getMenuSize()) {
-         List<Slot> results = this.searchHandler.getSearchResult();
-         return slot.index < results.size() ? results.get(slot.index).getItem() : ItemStack.EMPTY;
+      if (this.isSearchAndSortActive()) {
+         Slot shown = this.searchHandler.sortedSlot(slot);
+         return shown != null ? shown.getItem() : ItemStack.EMPTY;
       }
       return slot.getItem();
    }
@@ -243,16 +242,27 @@ public abstract class HandledScreenMixin<T extends AbstractContainerMenu> extend
    @Unique
    private Slot findSlot(double mouseX, double mouseY) {
       if (this.isSearchAndSortActive()) {
-         int menuSize = this.searchHandler.getMenuSize();
-         for (int i = 0; i < menuSize; ++i) {
+         int slotCount = this.getMenu().slots.size();
+         for (int i = 0; i < slotCount; ++i) {
             Slot slot = this.getMenu().getSlot(i);
             if (this.isHovering(slot, mouseX, mouseY) && slot.isActive()) {
-               List<Slot> results = this.searchHandler.getSearchResult();
-               return i < results.size() ? results.get(i) : null;
+               return this.searchHandler.sortedSlot(slot);
             }
          }
       }
       return this.getHoveredSlot(mouseX, mouseY);
+   }
+
+   @Unique
+   private void drawMatchBorder(GuiGraphicsExtractor graphics, Slot slot, int thickness, int color) {
+      int x1 = slot.x - 1;
+      int y1 = slot.y - 1;
+      int x2 = x1 + 18;
+      int y2 = y1 + 18;
+      graphics.fill(x1, y1, x2, y1 + thickness, color);
+      graphics.fill(x1, y2 - thickness, x2, y2, color);
+      graphics.fill(x1, y1 + thickness, x1 + thickness, y2 - thickness, color);
+      graphics.fill(x2 - thickness, y1 + thickness, x2, y2 - thickness, color);
    }
 
    @Unique

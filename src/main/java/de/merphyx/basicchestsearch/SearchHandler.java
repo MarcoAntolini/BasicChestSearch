@@ -7,6 +7,7 @@ import de.merphyx.basicchestsearch.util.ContainerUtil;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.world.inventory.Slot;
+import org.jspecify.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,7 +20,8 @@ public class SearchHandler {
    private final AbstractContainerScreen<?> screen;
    private final EditBox searchBar;
    private final Mode mode;
-   private List<Slot> slots = new ArrayList<>();
+   private List<Slot> containerMatches = new ArrayList<>();
+   private List<Slot> inventoryMatches = new ArrayList<>();
 
    public SearchHandler(AbstractContainerScreen<?> screen, EditBox searchBar, Mode mode) {
       this.screen = screen;
@@ -49,10 +51,22 @@ public class SearchHandler {
    }
 
    public void update(String query) {
-      int size = ContainerUtil.getMenuSize(this.screen.getMenu().slots.size());
-      this.slots = ContainerSearcher.search(query, this.screen.getMenu(), size);
+      int containerSize = this.getMenuSize();
+      List<Slot> matches = ContainerSearcher.search(query, this.screen.getMenu(), this.screen.getMenu().slots.size());
+      List<Slot> containerMatches = new ArrayList<>();
+      List<Slot> inventoryMatches = new ArrayList<>();
 
-      this.searchBar.setTextColor(this.slots.isEmpty() && !query.isEmpty() ? 0xFFFF6464 : 0xFFFFFFFF);
+      for (Slot slot : matches) {
+         if (slot.index < containerSize) {
+            containerMatches.add(slot);
+         } else {
+            inventoryMatches.add(slot);
+         }
+      }
+
+      this.containerMatches = containerMatches;
+      this.inventoryMatches = inventoryMatches;
+      this.searchBar.setTextColor(matches.isEmpty() && !query.isEmpty() ? 0xFFFF6464 : 0xFFFFFFFF);
    }
 
    public boolean shouldUseSearch() {
@@ -60,10 +74,19 @@ public class SearchHandler {
    }
 
    public boolean isResult(Slot slot) {
-      return this.slots.contains(slot);
+      return this.containerMatches.contains(slot) || this.inventoryMatches.contains(slot);
    }
 
-   public List<Slot> getSearchResult() { return this.slots; }
+   public @Nullable Slot sortedSlot(Slot visual) {
+      int containerSize = this.getMenuSize();
+      if (visual.index < containerSize) {
+         return visual.index < this.containerMatches.size() ? this.containerMatches.get(visual.index) : null;
+      }
+
+      int inventoryIndex = visual.index - containerSize;
+      return inventoryIndex < this.inventoryMatches.size() ? this.inventoryMatches.get(inventoryIndex) : null;
+   }
+
    public EditBox getSearchBar() { return this.searchBar; }
    public boolean isSortMode() { return this.mode == Mode.SORT; }
    public int getMenuSize() { return ContainerUtil.getMenuSize(this.screen.getMenu().slots.size()); }
